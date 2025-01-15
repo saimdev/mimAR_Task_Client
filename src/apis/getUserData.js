@@ -7,6 +7,7 @@ export const getUserData = async (setEmail, setUsername, navigate, setLoading) =
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
+      credentials: "include",
     });
   
     const data = await response.json();
