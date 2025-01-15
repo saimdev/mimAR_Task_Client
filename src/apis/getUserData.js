@@ -3,6 +3,9 @@ export const getUserData = async (setEmail, setUsername, navigate, setLoading) =
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://mim-ar-task-client.vercel.app",
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
     });
   

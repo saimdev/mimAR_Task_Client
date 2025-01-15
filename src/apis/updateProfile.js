@@ -3,6 +3,9 @@ export const updateProfile = async (email, username, password, navigate) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://mim-ar-task-client.vercel.app",
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
       body: JSON.stringify({
         email: email,
