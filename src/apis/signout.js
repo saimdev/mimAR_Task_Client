@@ -12,7 +12,7 @@ export const signout = async (navigate) => {
     localStorage.removeItem('githubUser');
   }
   else{
-    const response = await fetch("/api/logout", {
+    const response = await fetch("https://mim-ar-task-server.vercel.app/api/logout", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

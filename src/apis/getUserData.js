@@ -1,5 +1,5 @@
 export const getUserData = async (setEmail, setUsername, navigate, setLoading) => {
-    const response = await fetch("/api/getData", {
+    const response = await fetch("https://mim-ar-task-server.vercel.app/api/getData", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,5 @@
 export const updateProfile = async (email, username, password, navigate) => {
-    const response = await fetch("/api/update", {
+    const response = await fetch("https://mim-ar-task-server.vercel.app/api/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

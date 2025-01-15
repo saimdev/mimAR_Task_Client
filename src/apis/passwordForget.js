@@ -1,5 +1,5 @@
 export const passwordForget = async (email,navigate, setLoading) => {
-    const response = await fetch("/api/forget", {
+    const response = await fetch("https://mim-ar-task-server.vercel.app/api/forget", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
