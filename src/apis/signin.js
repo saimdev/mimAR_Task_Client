@@ -7,6 +7,7 @@ export const signin = async (email, password, navigate, setLoading) => {
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
     },
+    credentials: "include",
     body: JSON.stringify({
       email: email,
       password: password,

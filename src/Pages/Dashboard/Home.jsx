@@ -57,31 +57,31 @@ export const Home = () => {
       .catch((err) => {
         setError(err.error);
       });
-    getRandomQuote(
-      setLoadingQuote,
-      quoteApiKey,
-      setQuote,
-      setAuthor,
-      setQuoteError
-    );
+    // getRandomQuote(
+    //   setLoadingQuote,
+    //   quoteApiKey,
+    //   setQuote,
+    //   setAuthor,
+    //   setQuoteError
+    // );
   }, []);
 
   useEffect(() => {
-    getLiveWeather(
-      latitude,
-      longitude,
-      weatherApiKey,
-      setLoadingWeather,
-      setWeatherIcon,
-      setTemp,
-      setCity,
-      setCountry,
-      setHumidity,
-      setCondition,
-      setWindSpeed,
-      setWindDirection,
-      setError
-    );
+    // getLiveWeather(
+    //   latitude,
+    //   longitude,
+    //   weatherApiKey,
+    //   setLoadingWeather,
+    //   setWeatherIcon,
+    //   setTemp,
+    //   setCity,
+    //   setCountry,
+    //   setHumidity,
+    //   setCondition,
+    //   setWindSpeed,
+    //   setWindDirection,
+    //   setError
+    // );
   }, [latitude, longitude]);
 
   return (
