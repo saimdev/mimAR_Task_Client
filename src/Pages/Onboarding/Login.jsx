@@ -31,22 +31,6 @@ export const Login = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("Window location:", window.location.href); // Check full URL
-    const queryString = window.location.search; // Extract query string
-    console.log("Query String:", queryString);
-
-    const urlParams = new URLSearchParams(queryString); // Parse query params
-    const codeParam = urlParams.get("code"); // Extract 'code'
-
-    if (codeParam) {
-      console.log("GitHub Code Found:", codeParam);
-      // Perform additional actions if needed
-    } else {
-      console.log("No GitHub Code Found");
-    }
-  }, []);
-
   const signinUser = (e) => {
     e.preventDefault();
     setLoading(true);
