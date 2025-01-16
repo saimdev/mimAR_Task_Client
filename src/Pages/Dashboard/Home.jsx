@@ -10,12 +10,14 @@ import { getUserData } from "../../apis/getUserData";
 import { getRandomQuote } from "../../apis/getRandomQuote";
 import { getLiveWeather } from "../../apis/getLiveWeather";
 import { getLocation } from "../../utils/getLiveLocation";
+import { getAllUsers } from "../../apis/getAllUsers";
 import { Link } from "react-router-dom";
 // import { UserContext } from "../../Context/UserContext";
 
 export const Home = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingWeather, setLoadingWeather] = useState(true);
   const [loadingQuote, setLoadingQuote] = useState(true);
@@ -39,6 +41,7 @@ export const Home = () => {
   const googleUser = JSON.parse(localStorage.getItem("user"));
   const facebookUser = JSON.parse(localStorage.getItem("facebookUser"));
   const githubUser = JSON.parse(localStorage.getItem("githubUser"));
+
   //   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -64,6 +67,7 @@ export const Home = () => {
       setAuthor,
       setQuoteError
     );
+    getAllUsers(setUsers);
   }, []);
 
   useEffect(() => {
@@ -140,6 +144,33 @@ export const Home = () => {
           </table>
         </div>
 
+        <div className="p-1 line-div"></div>
+        {users.length > 0 ? (
+          <div className="profile-section">
+            <div className="d-flex flex-row align-items-center dashboard-subheading my-2">
+              <img src={profileLogo} alt="" className="profile-icon mx-2" />
+              <h4 className="text-white">All Users</h4>
+            </div>
+            <table className="table table-bordered">
+              <thead className="">
+                <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((user, index) => (
+                  <tr key={index}>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <div className="p-1 line-div"></div>
         <div className="weather-section mt-2">
           <div className="d-flex flex-row align-items-center dashboard-subheading my-2">
